@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Sus</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Cursive', cursive;
+	    background-color: #ffcdcd;
+        }
+        h1 {
+            text-align: center;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 20px;
+	    transition: background-color 0.3s ease;
+        }
+	.button-container button:hover{
+	    background-color: #feb7ff;
+	}
+        #noButton {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        #gifContainer {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Will you be mine?</h1>
+    <div class="button-container">
+        <button id="yesButton" onclick="yesClicked()">Yes</button>
+        <button id="noButton" onclick="noClicked()">No</button>
+    </div>
+    <div id="gifContainer">
+        <img src="https://media.tenor.com/qrCijZUDCT0AAAAi/cute-cat.gif" alt="Happy GIF" />
+    </div>
+
+    <script>
+        const title = document.getElementById('title');
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const gifContainer = document.getElementById('gifContainer');
+
+        function yesClicked() {
+            gifContainer.style.display = 'block';
+            title.style.display = 'none';
+            noButton.style.display = 'none';
+            yesButton.style.display = 'none';
+        }
+
+        function noClicked() {
+            noButton.style.top = `${Math.random() * 100}px`;
+            noButton.style.left = `${Math.random() * 100}px`;
+        }
+
+        yesButton.addEventListener('click', () => {
+            noButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
+
